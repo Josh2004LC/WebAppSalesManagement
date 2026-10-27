@@ -1,0 +1,56 @@
+﻿@model List<WebAppSalesManagement.Models.ClienteViewModel>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Reporte de Clientes</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 6px;
+            font-size: 12px;
+        }
+
+        th {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Reporte de Clientes</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Pais</th>
+            <th>Provincia</th>
+            <th>Canton</th>
+            <th>Distrito</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td>@cliente.Nombre</td>
+                <td>@cliente.Correo</td>
+                <td>@cliente.Telefono</td>
+                <td>@cliente.Pais</td>
+                <td>@cliente.Provincia</td>
+                <td>@cliente.Canton</td>
+                <td>@cliente.Distrito</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</body>
+</html>
